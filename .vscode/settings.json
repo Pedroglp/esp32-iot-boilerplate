@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "bitset": "cpp",
+        "string_view": "cpp",
+        "asynctcp.h": "c",
+        "arduino.h": "c",
+        "functional": "cpp"
+    },
+    "git.ignoreLimitWarning": true
+}

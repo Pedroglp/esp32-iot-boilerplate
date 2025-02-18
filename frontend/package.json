@@ -1,0 +1,31 @@
+{
+  "name": "esp32-boilerplater",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "dev": "webpack serve --mode=development",
+    "deploy": "(cd .. && pio run --target uploadfs)"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "css-minimizer-webpack-plugin": "^7.0.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.6.3",
+    "mini-css-extract-plugin": "^2.9.2",
+    "terser-webpack-plugin": "^5.3.11",
+    "webpack-cli": "^6.0.1",
+    "webpack-dev-server": "^5.2.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "css-loader": "^7.1.2",
+    "style-loader": "^4.0.0",
+    "typescript": "^5.7.3",
+    "webpack-mock-server": "^1.0.22"
+  }
+}
