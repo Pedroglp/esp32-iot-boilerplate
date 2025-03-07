@@ -9,17 +9,17 @@ export class Card extends HTMLElement {
             }
 
             .card {
-                min-width: 242px;
                 width: 100%;
-                max-width: 480px;
-                min-height: 296px;
-                max-height: 296px;
+                min-width: 15em;
+                max-width: 30em;
+                min-height: 18.5em;
+                max-height: 18.5em;
                 align-self: center;
                 margin-left: auto;
                 margin-right: auto;
                 overflow: hidden;
                 background-color: white;
-                border-radius: 8px;
+                border-radius: 0.5em;
                 border: 1px solid #e9e9e9;
                 display: flex;
                 flex-direction: column;
@@ -27,14 +27,13 @@ export class Card extends HTMLElement {
 
             .card-title {
                 position: sticky;
-                width: 100%;
                 display: flex;
                 flex-shrink: 0;
                 align-items: center;
                 justify-content: center;
                 top: 0;
-                height: 64px;
-                padding: 4px;
+                height: 4em;
+                padding: 0.25em;
                 font-weight: 600;
                 font-size: 1.2em;
                 background-color: white;
@@ -43,11 +42,9 @@ export class Card extends HTMLElement {
 
             .card-body {
                 overflow: scroll;
-                width: 100%;
                 flex-grow: 1;
-                max-height: 232px;
+                max-height: 14.5em;
             }
-
 
             .fadeOut {
                 animation: fadeOut 0.75s forwards;
@@ -56,7 +53,6 @@ export class Card extends HTMLElement {
             .fadeIn {
                 animation: fadeIn 0.75s forwards;
             }
-
 
             @keyframes fadeIn {
                 from {
@@ -75,7 +71,6 @@ export class Card extends HTMLElement {
                     opacity: 0;
                 }
             }
-
         </style>
         
         <div class="card">

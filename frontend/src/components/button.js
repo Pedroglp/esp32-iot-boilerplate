@@ -12,8 +12,8 @@ export class Button extends HTMLElement {
                 padding: 0.9em;
                 border: 1px solid #e9e9e9;
                 background-color: white;
-                border-radius: 24px;
-                min-width: 108px;
+                border-radius: 1.5em;
+                min-width: 6.75em;
                 font-weight: 400;
                 cursor: pointer;
                 transition: all 0.3s ease-in-out;

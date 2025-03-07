@@ -2,8 +2,6 @@ import WifiIcon from '../assets/wifi.svg';
 import LockerClosedIcon from '../assets/lockerClosed.svg';
 import LockerOpenedIcon from '../assets/lockerOpened.svg';
 
-let WIFILIST = []
-
 let getWifiList = async () => {
     const response = (await fetch('wifi-list', { method: 'GET' })).json();
     return response;
@@ -26,9 +24,8 @@ class WifiElement extends HTMLElement {
 
                 .wifi-network {
                     display: flex;
-                    width: 100%;
                     justify-content: space-between; 
-                    padding: 8px 12px;
+                    padding: 0.5em 0.75em;
                     font-size: 0.8em;
                     background-color: white;
                     cursor: pointer;
@@ -40,9 +37,9 @@ class WifiElement extends HTMLElement {
 
                 .left {
                     display: flex;
-                    margin: 0px;
+                    margin: 0;
                     align-items: center;
-                    gap: 8px;
+                    gap: 0.5em;
                 }
 
                 .right {
@@ -124,7 +121,6 @@ export class WifiList extends HTMLElement {
                 display: flex;
                 flex-direction: column;
                 justify-items: start;
-                width: 100%;
                 flex-wrap: wrap;
                 overflow: scroll;
             }

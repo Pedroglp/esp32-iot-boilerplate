@@ -13,7 +13,7 @@ export class Input extends HTMLElement {
                 font-weight: 400;
                 border: 1px solid #e9e9e9;
                 padding: 1em 1em 1em 1em;
-                border-radius: 24px;
+                border-radius: 1.5em;
                 width: 100%;
             }
 
@@ -25,25 +25,25 @@ export class Input extends HTMLElement {
             .input-wrapper {
                 display: block;
                 cursor: pointer;
-                width: 240px;
+                width: 15em;
             }
 
             .right {
                 position: relative;
-                top: -30px;
+                top: -1.875em;
                 float: right;
-                right: 12px;
-                height: 24px;
-                width: 24px;
+                right: 0.75em;
+                height: 1.5em;
+                width: 1.5em;
                 z-index: 2;
             }
 
             .left {
                 position: relative;
-                left: 12px;
-                bottom: -38px;
-                height: 24px;
-                width: 24px;
+                left: 0.75em;
+                bottom: -2.375em;
+                height: 1.5em;
+                width: 1.5em;
                 z-index: 2;
             }
 
@@ -74,7 +74,7 @@ export class Input extends HTMLElement {
             const hasLeftIcon = this.leftSlot?.assignedNodes().length > 0;
 
             if (hasLeftIcon) {
-                this.input.style.paddingLeft = '40px';
+                this.input.style.paddingLeft = '2.5em';
             } else {
                 this.input.style.paddingLeft = '1em';
             }
@@ -86,7 +86,7 @@ export class Input extends HTMLElement {
             const hasRightIcon = this.rightSlot?.assignedNodes().length > 0;
     
             if (hasRightIcon) {
-                this.input.style.paddingRight = '40px';
+                this.input.style.paddingRight = '2.5em';
             } else {
                 this.input.style.paddingRight = '1em';
             }
