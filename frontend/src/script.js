@@ -73,6 +73,8 @@ wifiCard.onClose = () => {
   if(selectedNetwork.encryption) {
     AppState = 'Set-Password';
     wifiPasswordCard.show();
+    // Clear previous network name
+    document.querySelector('#wifi-password-card [slot="body"] .ssid').innerHTML = '';
     let p = document.createElement(`p`);
     p.innerText = `${selectedNetwork.ssid}'s Network`;
     document.querySelector('#wifi-password-card [slot="body"] .ssid').appendChild(p);
@@ -88,19 +90,24 @@ wifiPasswordCard.onClose = async () => {
   loadingElement.hidden =  false;
   
   let connectionRes = await connectToWifi(selectedNetwork.ssid, wifiPasswordInput.value);
-  let connectionResultTitle = document.createElement('p');
   
-  let bodyElement = document.createElement('div')
+  // Remove all existing slot elements first
+  connectionResultCard.querySelectorAll('[slot]').forEach(element => {
+    element.remove();
+  });
+  
+  let connectionResultTitle = document.createElement('p');
+  let bodyElement = document.createElement('div');
+  
   bodyElement.setAttribute('slot', 'body');
-  bodyElement.setAttribute('class', 'card-wrapper')
-  bodyElement.setAttribute('style', 'padding: 12px;')
+  bodyElement.setAttribute('class', 'card-wrapper');
+  bodyElement.setAttribute('style', 'padding: 0.75em;');
 
   bodyElement.innerHTML = /*html*/`
-    <img src=${WifiIcon} style="width: 48px; height:48px"/>
+    <img src=${WifiIcon} style="width: 3em; height: 3em"/>
     <p>Your device is now connected to the network.<p>
     <p>You can now close this window.<p>
-  `
-
+  `;
 
   connectionResultTitle.innerText = "Connected";
   connectionResultTitle.setAttribute('slot', 'title');
@@ -112,14 +119,15 @@ wifiPasswordCard.onClose = async () => {
     bodyElement.innerHTML = /*html*/`
     <p>Your device was not able to connect to the network.<p>
     <p>Check the password and try again.<p>
-  `
+    `;
     retryButton.hidden = false;
+    // Clear password input after failed connection
+    wifiPasswordInput.value = '';
   }
 
-  connectionResultCard.appendChild(bodyElement, connectionResultCard.querySelector('[slot="body"]'));
+  connectionResultCard.appendChild(bodyElement);
   connectionResultCard.appendChild(connectionResultTitle);
   connectionResultCard.show();
-
 
   loadingElement.hidden =  true;
 }
@@ -158,4 +166,6 @@ connectButton.onclick = async () => {
 retryButton.onclick =  async () => {
   AppState = 'List-Wifi';
   connectionResultCard.close();
+  // Clear password input when retrying
+  wifiPasswordInput.value = '';
 }

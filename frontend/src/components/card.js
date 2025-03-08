@@ -10,7 +10,7 @@ export class Card extends HTMLElement {
 
             .card {
                 width: 100%;
-                min-width: 15em;
+                min-width: 20em;
                 max-width: 30em;
                 min-height: 18.5em;
                 max-height: 18.5em;
